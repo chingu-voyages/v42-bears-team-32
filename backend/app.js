@@ -15,7 +15,7 @@ app.use(cors({
 app.use(morgan('tiny'))
 
 
-// app.use('/v1', api);
+app.use('/v1', api);
 
 
 export default app
