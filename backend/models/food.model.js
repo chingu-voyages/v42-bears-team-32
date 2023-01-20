@@ -1,21 +1,20 @@
-import { Schema, model } from 'mongoose'
-const foodSchema = new Schema({
+import mongoose from 'mongoose'
+const foodSchema = new mongoose.Schema({
   name: {
     type: String,
     requried: true
   },
   imageUrl: {
-    type: {
+      type: String
+
+  },
+  ingredients: [
+    {
       type: String
     }
-  },
-  ingredients: {
-    type: {
-      type: String
-    }
-  },
+  ],
   price: {
-    type: Number,
+    type: mongoose.Types.Decimal128,
     required: true
   },
   calories: {
@@ -38,7 +37,7 @@ const foodSchema = new Schema({
   category: {
     type: [{ type: String }]
   },
-  tag: {
+  tags: {
     type: [{ type: String }]
   },
   avaliablity: {
@@ -46,5 +45,5 @@ const foodSchema = new Schema({
   }
 })
 
-const Food = model('Food', foodSchema)
+const Food = mongoose.model('Food', foodSchema)
 export default Food
