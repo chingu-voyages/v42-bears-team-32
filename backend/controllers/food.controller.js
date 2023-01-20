@@ -1,10 +1,29 @@
 import asyncHandler from '../services/async-handler.js'
 import Food from '../models/food.model.js'
 export const getAllFoods = asyncHandler(async (req, res) => {
-  const foods = await Food.find({})
-  if (foods) return res.json(foods)
+  const page = parseInt(req.query.page)
+  const limit = parseInt(req.query.limit)
 
-  res.json({ message: 'Product not found' })
+  const startIndex = (page - 1) * limit
+  const endIndex = page * limit
+
+  const results = {}
+
+  if (endIndex < (await Food.countDocuments().exec())) {
+    results.next = {
+      page: page + 1,
+      limit: limit
+    }
+  }
+
+  if (startIndex > 0) {
+    results.previous = {
+      page: page - 1,
+      limit: limit
+    }
+  }
+  results.results = await Food.find().limit(limit).skip(startIndex).exec()
+  return res.json(results)
 })
 
 export const createFood = asyncHandler(async (req, res) => {
@@ -22,7 +41,8 @@ export const createFood = asyncHandler(async (req, res) => {
     avaliablity
   } = req.body
 
-  const food = await Food.create({name,
+  const food = await Food.create({
+    name,
     imageUrl,
     ingredients,
     price,
@@ -32,8 +52,8 @@ export const createFood = asyncHandler(async (req, res) => {
     category,
     tags,
     deliveryTime,
-    avaliablity})
+    avaliablity
+  })
 
-    if (food) return res.status(201).json(food)
-    throw new Error('Error Creating Food')
+  return res.status(201).json(food)
 })
