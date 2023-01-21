@@ -5,3 +5,7 @@
 body {
   margin: 0;
 }
+
+.navbar-animate {
+  transition: width 2s, height 2s;
+}
