@@ -1,6 +1,6 @@
 export default function SearchBar() {
   return (
-    <div className="w-98 bg-gray-2 py-3 px-5 rounded-full">
+    <div className="w-98 max-w-full bg-gray-2 py-3 px-5 rounded-full">
       <input
         type="text"
         placeholder="Search"
