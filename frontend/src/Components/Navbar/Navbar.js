@@ -31,7 +31,7 @@ const Navbar = () => {
       </button>
       <div className="" ref={navRef}>
         <ul
-          className="lg:p-0 lg:flex-row lg:bg-transparent lg:relative lg:h-auto absolute right-0 top-0 
+          className="lg:p-0 lg:flex-row lg:bg-transparent lg:relative lg:h-auto absolute right-0 top-0 z-10
         flex  gap-8 text-white flex-col h-screen p-20   bg-gray-800/70 "
         >
           <a
