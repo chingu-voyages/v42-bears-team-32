@@ -1,5 +1,5 @@
-import React from "react";
-import ExploreCategory from "../Components/Category/ExploreCategory";
+import React from 'react';
+import ExploreCategory from '../Components/Category/ExploreCategory';
 
 function Home() {
   return (
