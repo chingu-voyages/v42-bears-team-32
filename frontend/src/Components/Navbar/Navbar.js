@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../../asset/logo.svg';
-import cart from '../../asset/cart-icon.svg';
+import { images } from '../../constants';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -21,7 +20,11 @@ const Navbar = () => {
   return (
     <nav className="flex bg-white relative px-12 py-6 shadow-md">
       <a href="#">
-        <img src={logo} alt="EatingLight" className="w-36 lg:w-40 py-2" />
+        <img
+          src={images.logo}
+          alt="EatingLight"
+          className="w-36 lg:w-40 py-2"
+        />
       </a>
       <button
         className="ml-auto absolute right-10 text-3xl text-lime-500 top-7 z-20 lg:hidden"
@@ -47,7 +50,7 @@ const Navbar = () => {
             Sign In
           </a>
           <a href="#" className="px-6 py-2 bg-transparent ">
-            <img src={cart} alt="cart" className="hover:scale-110" />
+            <img src={images.cart} alt="cart" className="hover:scale-110" />
           </a>
         </ul>
       </div>
