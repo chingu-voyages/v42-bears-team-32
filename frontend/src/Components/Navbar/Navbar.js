@@ -20,7 +20,7 @@ const Navbar = () => {
   }, [show]);
   return (
     <nav className="flex bg-white relative px-12 py-6 shadow-md">
-      <a href="#">
+      <a href="/">
         <img src={logo} alt="EatingLight" className="w-36 lg:w-40 py-2" />
       </a>
       <button

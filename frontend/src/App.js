@@ -1,23 +1,22 @@
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import "./App.css";
-import React, { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar";
-import Footer from './Components/Footer/Footer';
-import Error from "./Components/Error";
-import Home from "./Pages/Home";
-
+import Error from './Components/Error';
+import Home from './Pages/Home';
+import SingleProductPage from './Pages/SingleProductCard/SingleProductPage';
+import SharedPages from './constants/SharedPages';
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="*" element={<Error />} />
+        <Route path="/" element={<SharedPages />}>
+          <Route index element={<Home />} />
+          <Route path="/singleproduct" element={<SingleProductPage />} />
+          <Route path="*" element={<Error />} />
+        </Route>
       </Routes>
-      <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 
