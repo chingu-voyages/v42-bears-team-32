@@ -19,13 +19,15 @@ const Navbar = () => {
   }, [show]);
   return (
     <nav className="flex bg-white relative px-12 py-6 shadow-md">
-      <a href="#">
+
+      <a href="/">
         <img
           src={images.logo}
           alt="EatingLight"
           className="w-36 lg:w-40 py-2"
         />
-      </a>
+
+    
       <button
         className="ml-auto absolute right-10 text-3xl text-lime-500 top-7 z-20 lg:hidden"
         onClick={toggleNav}
