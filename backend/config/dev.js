@@ -1,5 +1,4 @@
-import { config } from "dotenv"
-config()
 export default {
-  MONGO_URI: process.env.DEV_MONGO_URI,
+  MONGO_URI: `mongodb://127.0.0.1:27017/foodapp`,
+  JWT_SECRET: `abc123`
 }

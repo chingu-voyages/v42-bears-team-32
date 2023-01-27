@@ -1,27 +1,14 @@
-#Healthy Food Delivery Website
+# voyage-tasks
 
-##Overview
-This app is created by Chingu Voyage 42 bears-team-32. It shows the healthy food and
+Your project's `readme` is as important to success as your code. For 
+this reason you should put as much care into its creation and maintenance
+as you would any other component of the application.
 
-Live Link:
+If you are unsure of what should go into the `readme` let this article,
+written by an experienced Chingu, be your starting point - 
+[Keys to a well written README](https://tinyurl.com/yk3wubft).
 
-##Features
-This project includes:
+And before we go there's "one more thing"! Once you decide what to include
+in your `readme` feel free to replace the text we've provided here.
 
-1. Home Page
-2. Product List Page
-3. Product Detail Page
-4. Order List Page
-5. Ability to add orders
-
-##Running this project locally
-From the repo:
-
-1. Clone this project locally
-2. Run npm install in your bash/ command line
-3. Run npm run dev in you bash/ command line
-
-##Dependencies
-.react-router-dom
-.tailwindcss
-.dotenv
+> Own it & Make it your Own!

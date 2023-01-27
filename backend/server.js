@@ -17,8 +17,3 @@ async function startServer () {
 }
 
 startServer()
-
-
-// Add AdminJS
-// Add SwaggerUI
-// If possible migrate to typescript
