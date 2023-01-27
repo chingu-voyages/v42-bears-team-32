@@ -1,10 +1,12 @@
 import React, { lazy, Suspense } from 'react';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Error from './Components/Error';
 import Home from './Pages/Home';
 import SingleProductPage from './Pages/SingleProductCard/SingleProductPage';
 import SharedPages from './constants/SharedPages';
+
 
 function App() {
   return (
