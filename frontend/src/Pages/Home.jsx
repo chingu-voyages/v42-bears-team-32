@@ -1,10 +1,13 @@
+import React from "react";
+import ExploreCategory from "../Components/Category/ExploreCategory";
+import HeroSection from "../Components/Hero";
 import React from 'react';
 import ExploreCategory from '../Components/Category/ExploreCategory';
 
 function Home() {
   return (
     <div>
-      <p className="px-[150px]">Hero Section</p>
+      <HeroSection />
       <ExploreCategory />
     </div>
   );
