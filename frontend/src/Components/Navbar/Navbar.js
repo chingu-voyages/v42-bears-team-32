@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../../asset/logo.svg';
-import cart from '../../asset/cart-icon.svg';
+
+import SearchBar from '../search/SearchBar';
+
+import { images } from '../../constants';
+
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +14,7 @@ const Navbar = () => {
     setShow(!show);
   };
   useEffect(() => {
-    let toggle = 'hidden lg:ml-auto lg:block ';
+    let toggle = 'hidden  lg:block ';
     if (!show) {
       navRef.current.className = toggle;
     } else {
@@ -19,10 +22,19 @@ const Navbar = () => {
     }
   }, [show]);
   return (
-    <nav className="flex bg-white relative px-12 py-6 shadow-md">
-      <a href="#">
-        <img src={logo} alt="EatingLight" className="w-36 lg:w-40 py-2" />
+
+    <nav className="flex bg-white relative lg:px-12 px-4  py-6 shadow-md justify-between">
+      <a href="/">
+        <img
+          src={images.logo}
+          alt="EatingLight"
+          className="w-28 lg:w-40 py-3 lg:py-2 mr-20"
+        />
       </a>
+      <div className="text-center">
+        <SearchBar />
+      </div>
+
       <button
         className="ml-auto absolute right-10 text-3xl text-lime-500 top-7 z-20 lg:hidden"
         onClick={toggleNav}
@@ -47,7 +59,7 @@ const Navbar = () => {
             Sign In
           </a>
           <a href="#" className="px-6 py-2 bg-transparent ">
-            <img src={cart} alt="cart" className="hover:scale-110" />
+            <img src={images.cart} alt="cart" className="hover:scale-110" />
           </a>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -16,13 +16,13 @@ module.exports = {
       },
       dropShadow: {
         lg: [
-          "0 1px 3px rgba(0, 0, 0, 0.05)",
-          "0 10px 15px rgba(0, 0, 0, 0.04)",
-          "0 7px 7px rgba(0, 0, 0, 0.04)",
+          '0 1px 3px rgba(0, 0, 0, 0.05)',
+          '0 10px 15px rgba(0, 0, 0, 0.04)',
+          '0 7px 7px rgba(0, 0, 0, 0.04)',
         ],
       },
       width: {
-        98: "25rem",
+        98: '29rem',
       },
     },
   },
