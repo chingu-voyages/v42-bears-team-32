@@ -11,7 +11,9 @@ module.exports = {
         xl: ["24px", "32px"],
       },
       colors: {
+        "primary-0": "#EFF6E7",
         "primary-1": "#DBEBC9",
+        "primary-3": "#B2D48E",
         "primary-5": "#8ABE53",
         "primary-7": "#618639",
         "gray-2": "#E9ECEF",
@@ -29,7 +31,7 @@ module.exports = {
         ],
       },
       width: {
-        98: "25rem",
+        98: "29rem",
       },
     },
   },
