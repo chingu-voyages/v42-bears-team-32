@@ -34,8 +34,8 @@ const categoryData = [
 ];
 function ExploreCategory() {
   return (
-    <div className="px-[150px] py-[50px]">
-      <p className="text-xl font-weight-800 font-medium py-[25px]">
+    <div className="px-[150px] pt-[50px]">
+      <p className="text-dark-2 text-h1 font-weight-700 py-[25px]">
         Explore by Categories
       </p>
 
