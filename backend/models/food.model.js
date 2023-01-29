@@ -5,8 +5,7 @@ const foodSchema = new mongoose.Schema({
     requried: true
   },
   imageUrl: {
-      type: String
-
+    type: String
   },
   ingredients: [
     {
@@ -17,10 +16,22 @@ const foodSchema = new mongoose.Schema({
     type: mongoose.Types.Decimal128,
     required: true
   },
-  calories: {
-    type: Number,
-    required: true
-  },
+  nutrients: [
+    {
+      carbs: {
+        type: Number,
+        required: true
+      },
+      fat: {
+        type: Number,
+        required: true
+      },
+      protein: {
+        type: Number,
+        required: true
+      }
+    }
+  ],
   restaurantName: {
     type: String,
     required: true
