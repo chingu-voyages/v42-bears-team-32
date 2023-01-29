@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React, { useEffect, useRef, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-import SearchBar from '../search/SearchBar';
-
-import { images } from '../../constants';
-
+// import SearchBar from '../search/SearchBar';
+import { images } from "../../constants";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -14,15 +12,14 @@ const Navbar = () => {
     setShow(!show);
   };
   useEffect(() => {
-    let toggle = 'hidden  lg:block ';
+    let toggle = "hidden  lg:block ";
     if (!show) {
       navRef.current.className = toggle;
     } else {
-      navRef.current.className = '';
+      navRef.current.className = "";
     }
   }, [show]);
   return (
-
     <nav className="flex bg-white relative lg:px-12 px-4  py-6 shadow-md justify-between">
       <a href="/">
         <img
@@ -31,9 +28,7 @@ const Navbar = () => {
           className="w-28 lg:w-40 py-3 lg:py-2 mr-20"
         />
       </a>
-      <div className="text-center">
-        <SearchBar />
-      </div>
+      <div className="text-center">{/* <SearchBar /> */}</div>
 
       <button
         className="ml-auto absolute right-10 text-3xl text-lime-500 top-7 z-20 lg:hidden"
