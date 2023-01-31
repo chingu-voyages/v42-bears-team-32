@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import asyncHandler from '../services/async-handler.js'
+import asyncHandler from '../utils/async-handler.js'
 import User from '../models/user.model.js'
 import { config } from 'dotenv'
 config()
