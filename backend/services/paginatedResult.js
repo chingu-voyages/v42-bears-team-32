@@ -1,14 +1,13 @@
-export default function paginatedResults(model) {
-    return async (req, res, next) => {
-      const page = parseInt(req.query.page)
-      const limit = parseInt(req.query.limit)
+export default async function pagination({page, limit}, count) {
+      const page = parseInt(page)
+      const limit = parseInt(limit)
   
       const startIndex = (page - 1) * limit
       const endIndex = page * limit
   
-      const results = {}
+      let results = {}
   
-      if (endIndex < await model.countDocuments().exec()) {
+      if (endIndex < count) {
         results.next = {
           page: page + 1,
           limit: limit
@@ -21,12 +20,5 @@ export default function paginatedResults(model) {
           limit: limit
         }
       }
-      try {
-        results.results = await model.find().limit(limit).skip(startIndex).exec()
-        res.paginatedResults = results
-        next()
-      } catch (e) {
-        res.status(500).json({ message: e.message })
-      }
-    }
-  }
+      return results
+}

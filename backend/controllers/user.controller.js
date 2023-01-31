@@ -1,6 +1,6 @@
-import asyncHandler from '../services/async-handler'
-import generateToken from '../utils/generateToken.js'
-import User from '../models/userModel.js'
+import asyncHandler from '../services/async-handler.js'
+import generateToken from '../services/generateToken.js'
+import User from '../models/user.model.js'
 
 // @desc    Auth user & get token
 // @route   POST /api/users/login
@@ -100,13 +100,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Get all users
-// @route   GET /api/users
-// @access  Private/Admin
-const getUsers = asyncHandler(async (req, res) => {
-  const users = await User.find({})
-  res.json(users)
-})
+
 
 
 
@@ -119,5 +113,5 @@ export {
   registerUser,
   getUserProfile,
   updateUserProfile,
-  getUsers,
+  
 }
