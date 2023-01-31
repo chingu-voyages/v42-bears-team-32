@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createFood, getAllFoods } from '../controllers/food.controller.js'
+import {authUser, getUserProfile, getUsers, registerUser, updateUserProfile } from '../controllers/user.controller.js'
 const router = Router()
 
 router.route('/')

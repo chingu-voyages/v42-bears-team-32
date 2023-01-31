@@ -6,7 +6,7 @@ const foodSchema = new mongoose.Schema({
   },
   imageUrl: {
     type: String
-  },
+  }, 
   ingredients: [
     {
       type: String
@@ -47,7 +47,7 @@ const foodSchema = new mongoose.Schema({
   tags: {
     type: [{ type: String }]
   },
-  avaliablity: {
+  countInStock: {
     type: Number
   }
 })
