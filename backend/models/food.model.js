@@ -6,7 +6,7 @@ const foodSchema = new mongoose.Schema({
   },
   imageUrl: {
     type: String
-  },
+  }, 
   ingredients: [
     {
       type: String
