@@ -27,33 +27,18 @@ export const getAllFoods = asyncHandler(async (req, res) => {
 })
 
 export const createFood = asyncHandler(async (req, res) => {
-  const {
-    name,
-    imageUrl,
-    ingredients,
-    price,
-    calories,
-    restaurantName,
-    rating,
-    category,
-    tags,
-    deliveryTime,
-    avaliablity
-  } = req.body
-
-  const food = await Food.create({
-    name,
-    imageUrl,
-    ingredients,
-    price,
-    calories,
-    restaurantName,
-    rating,
-    category,
-    tags,
-    deliveryTime,
-    avaliablity
-  })
-
+  const food = await Food.create(req.body)
   return res.status(201).json(food)
 })
+
+export const updateFood = asyncHandler(async (req, res) => {
+  const updatedFood = await Food.findOneAndUpdate({_id: req.params.id}, req.body, {new:true});
+  return res.status(201).json(updatedFood)
+})
+
+export const deleteFood = asyncHandler(async(req,res) => {
+  const deletedFood = await Food.findByIdAndDelete(req.params.id)
+  return res.status(201).json(deletedFood)
+})
+
+
