@@ -1,5 +1,7 @@
 import { createServer } from 'http'
 
+import colors from 'colors'
+
 import app from './app.js'
 
 import { connectDB } from './services/db.js'
@@ -12,7 +14,7 @@ async function startServer () {
   await connectDB()
 
   server.listen(PORT, () => {
-    console.log(`Server started on http://localhost:${PORT}`)
+    console.log(`Server started on http://localhost:${PORT}`.green.underline)
   })
 }
 

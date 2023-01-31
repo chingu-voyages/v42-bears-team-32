@@ -1,9 +1,11 @@
 import { Router } from 'express'
-import {authUser, getUserProfile, getUsers, registerUser, updateUserProfile } from '../controllers/user.controller.js'
+import { getAllFoods, createFood, getFoodById } from '../controllers/food.controller.js';
+
 const router = Router()
 
 router.route('/')
   .get(getAllFoods)
   .post(createFood);
+router.post("/:id", getFoodById)
 
 export default router
