@@ -1,5 +1,6 @@
-import asyncHandler from '../services/async-handler.js'
+import asyncHandler from '../utils/async-handler.js'
 import Food from '../models/food.model.js'
+import pagination from '../utils/paginatedResult.js';
 export const getAllFoods = asyncHandler(async (req, res) => {
   const page = parseInt(req.query.page)
   const limit = parseInt(req.query.limit)
@@ -56,4 +57,9 @@ export const createFood = asyncHandler(async (req, res) => {
   })
 
   return res.status(201).json(food)
+})
+
+export const getFoodById= asyncHandler(async (req,res) => {
+    const food = await Food.findById(req.params.id)
+    return res.status(201).json(food)
 })

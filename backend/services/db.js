@@ -1,16 +1,18 @@
 import { set, connect } from 'mongoose'
 import { config } from 'dotenv'
+import colors from 'colors'
 config()
-import mongo from '../config/keys.js'
+import keys from '../config/keys.js'
 set('strictQuery', true)
+
 export const connectDB = async () => {
   try {
-    const conn = await connect(mongo.MONGO_URI)
-    console.log(`MongoDB Connected : ${conn.connection.host}`)
+    const conn = await connect(keys.MONGO_URI)
+    console.log(`MongoDB Connected : ${conn.connection.host}`.grey)
   } catch (err) {
     console.log(`Error: ${err.message}`)
     process.exit(1)
   }
-}
+} 
 
 
