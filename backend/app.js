@@ -7,6 +7,9 @@ import { connectAdmin } from "./admin/admin.js";
 import swaggerDocs from "./utils/swagger.js";
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use(
   cors({
     origin: "*",
