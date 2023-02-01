@@ -78,7 +78,7 @@ const router = Router()
 router.route('/')
   .get(getAllFoods)
   .post(createFood);
-router.post("/:id", getFoodById)
+router.get("/:id", getFoodById)
 
 export default router
 
