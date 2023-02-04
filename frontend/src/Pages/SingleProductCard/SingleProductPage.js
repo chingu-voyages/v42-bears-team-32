@@ -1,12 +1,27 @@
-import React from 'react';
+
+import React,{useEffect} from 'react';
 import { images } from '../../constants';
 import Rating from '../../Components/Rating/Rating';
 import Tag from '../../Components/Tag/Tag';
 import AddToCart from '../../Components/AddToCart/AddToCart';
 import Counter from '../../Components/QuantityPicker';
 import CaloriePercent from '../../Components/CaloriePercent';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchFoods, fetchSingleFood } from "../../store/foodSlice";
+
 
 const SingleProductPage = () => {
+  const food = useSelector((state) => state.food);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchFoods());
+    dispatch(fetchSingleFood("63d97518ddcda581178bf70e"));
+  }, [dispatch]);
+
+  console.log(food);
+
   return (
     <section className="h-auto lg:h-screen flex flex-col m-6">
       <img
