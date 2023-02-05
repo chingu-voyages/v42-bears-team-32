@@ -6,6 +6,7 @@ import Error from './Components/Error';
 import Home from './Pages/Home';
 import SingleProductPage from './Pages/SingleProductCard/SingleProductPage';
 import SharedPages from './constants/SharedPages';
+import OrderDetailsPage from './Pages/OrderDetailsPage/OrderDetailsPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<SharedPages />}>
           <Route index element={<Home />} />
           <Route path="/singleproduct" element={<SingleProductPage />} />
+          <Route path="/orderdetails" element={<OrderDetailsPage />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
