@@ -1,4 +1,4 @@
-import HeroImg from "../../asset/Home/HeroImage.svg";
+import HeroImg from "../../asset/Home/HeroImage.png";
 import logo from "../../asset/logo.svg";
 
 import { MdSearch } from "react-icons/md";
@@ -7,12 +7,12 @@ export default function HeroSection() {
   return (
     <div className="bg-primary-0 overflow-x-clip">
       <div className="relative px-6 py-10 sm:p-0 sm:h-[26rem] sm:flex sm:items-stretch sm:justify-start sm:max-w-max sm:m-auto">
-        <div className="sm:p-8 sm:min-w-[28rem] flex flex-col justify-center">
+        <div className="sm:p-8 sm:min-w-[28rem] flex flex-col justify-center items-center sm:items-start">
           <div className="mb-5">
             <img src={logo} alt="EatingLight" className="max-w-lg w-full" />
           </div>
           <div className="mb-5">
-            <span className="text-2xl sm:text-4xl text-primary-3 ">
+            <span className="text-lg sm:text-3xl text-primary-3 ">
               Lighten up your meals, lighten up your life
             </span>
           </div>
@@ -36,7 +36,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="relative -mb-16">
+        <div className="relative mx-auto -mb-48 sm:-mb-64">
           <img src={HeroImg} className="sm:w-[32rem] sm:max-w-none" />
         </div>
       </div>
