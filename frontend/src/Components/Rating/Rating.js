@@ -20,12 +20,11 @@ const Rating = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex my-6">
       {stars.map((star, index) => {
         return (
-          <div className="text-3xl">
+          <div className="text-3xl key={index}">
             <FaStar
-              key={index}
               className={
                 (hover || checked) > index
                   ? 'text-[#FFE081] hover:text-[#FFE081] '
