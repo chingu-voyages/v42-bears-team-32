@@ -2,9 +2,13 @@ import React from 'react';
 
 import images from '../../constants/images';
 import { FaTimes } from 'react-icons/fa';
-import Counter from '../../Components/QuantityPicker';
 
-const OrderListComponent = ({ name, img, price }) => {
+import { removeItem } from '../../features/Orders/orderSlice';
+import { useDispatch } from 'react-redux';
+import QuantityPicker from '../QuantityPicker';
+const OrderListComponent = ({ id, name, img, price, quantity }) => {
+  const dispatch = useDispatch();
+  // console.log(quantity);
   return (
     <article className="flex  drop-shadow-lg shadow-gray-200 shadow-md rounded-xl ">
       <div className="flex w-full ">
@@ -12,7 +16,10 @@ const OrderListComponent = ({ name, img, price }) => {
         <div className="flex flex-col w-full gap-1 p-7">
           <div className="flex justify-between mr-3 items-center">
             <h5 className="text-dark-3 font-bold">{name}</h5>
-            <span className="text-gray-5 text-3xl ">
+            <span
+              className="text-gray-5 text-3xl "
+              onClick={() => dispatch(removeItem(id))}
+            >
               <FaTimes />
             </span>
           </div>
@@ -23,7 +30,7 @@ const OrderListComponent = ({ name, img, price }) => {
           </div>
           <div className="flex justify-between items-center">
             <p>{price}</p>
-            <Counter />
+            <QuantityPicker id={id} quantity={quantity} />
           </div>
         </div>
       </div>
