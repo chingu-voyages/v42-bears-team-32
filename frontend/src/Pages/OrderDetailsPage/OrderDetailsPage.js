@@ -1,6 +1,6 @@
 import React from 'react';
 import { images } from '../../constants';
-import cartItems from './cartItems';
+// import cartItems from './cartItems';
 import OrderListComponent from '../../Components/OrderList/OrderListComponent';
 import Summary from '../../Summary/Summary';
 import { useSelector } from 'react-redux';
