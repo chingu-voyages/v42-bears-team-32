@@ -7,7 +7,7 @@ const SharedPages = () => {
     <>
       <Navbar />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
