@@ -5,7 +5,7 @@ import { FaTimes } from 'react-icons/fa';
 
 import { removeItem } from '../../features/Orders/orderSlice';
 import { useDispatch } from 'react-redux';
-import QuantityPicker from '../QuantityPicker/QuantityCount';
+import QuantityPicker from '../QuantityPicker';
 const OrderListComponent = ({ id, name, img, price, quantity }) => {
   const dispatch = useDispatch();
   // console.log(quantity);
