@@ -1,7 +1,11 @@
-import DonutChart from "./DonutChart";
-import "react-circular-progressbar/dist/styles.css";
+import DonutChart from './DonutChart';
+// import "react-circular-progressbar/dist/styles.css";
 
-export default function CaloriePercent({ carbs = 0, protein = 0, fats = 0 }) {
+export default function CaloriePercent({
+  carbs = 40,
+  protein = 49,
+  fats = 10,
+}) {
   return (
     <div className="flex items-center gap-5 sm:gap-24">
       <DonutChart className="text-red-1" percent={carbs} label="Carbs" />
