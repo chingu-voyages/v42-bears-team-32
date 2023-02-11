@@ -6,7 +6,7 @@ import HomeProductCard from "./HomeProductCard";
 function HomeProducts({ label }) {
   const food = useSelector((state) => state.food.foods.results);
   const dispatch = useDispatch();
-  console.log("show food", food);
+
   useEffect(() => {
     dispatch(fetchFoods());
   }, []);
