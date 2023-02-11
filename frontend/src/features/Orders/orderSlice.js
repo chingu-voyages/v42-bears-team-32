@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import cartItems from '../../Pages/OrderDetailsPage/cartItems';
+import { createSlice } from "@reduxjs/toolkit";
+import cartItems from "../../Pages/OrderDetailsPage/CartItems";
 const initialState = {
   orderItems: cartItems,
   totalPrice: 0,
@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const orderSlice = createSlice({
-  name: 'orderItems',
+  name: "orderItems",
   initialState,
   reducers: {
     removeItem: (state, action) => {

@@ -1,20 +1,18 @@
 import React from "react";
-import ExploreCategory from "../Components/Category/ExploreCategory"
-import HomeProducts from "../Components/ProductCard/HomeProducts";
-import ProductCard from "../Components/ProductCard/ProductCard";
-import { todayOfferData } from "../constants/data.js";
-import { bestCuisineData } from "../constants/data.js";
-import { suggestedFoodData } from "../constants/data.js";
+import ExploreCategory from "../Components/Category/ExploreCategory";
 import HeroSection from "../Components/Hero";
+import TodayOffer from "../Components/ProductCard/TodayOffer";
+import BestCuisine from "../Components/ProductCard/BestCuisine";
+import Suggested from "../Components/ProductCard/Suggested";
 
 function Home() {
   return (
     <div>
       <HeroSection />
       <ExploreCategory />
-      <HomeProducts data={todayOfferData} label="Today's Offer" />
-      <HomeProducts data={bestCuisineData} label="Best Cuisine" />
-      <HomeProducts data={suggestedFoodData} label="Suggested For You" />
+      <TodayOffer label="Today's Offer" />
+      <BestCuisine label="Best Cuisine" />
+      <Suggested label="Suggested For You" />
     </div>
   );
 }
