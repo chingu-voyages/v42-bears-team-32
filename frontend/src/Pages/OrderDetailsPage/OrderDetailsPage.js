@@ -11,7 +11,7 @@ const OrderDetailsPage = () => {
   // console.log(quantity);
   return (
     <section className="lg:mb-10 mt-10 h-auto">
-      <div className="mx-6 md:mx-10 my-4">
+      <div className="mx-6 lg:mx-10 my-4">
         <img
           className="w-8  mb-8 hover:scale-125 duration-100"
           src={images.backarrow}
@@ -25,14 +25,14 @@ const OrderDetailsPage = () => {
       </div>
       {/* Order list */}
       <div className="flex relative h-auto">
-        <div className="flex flex-col w-full lg:w-1/2 mx-4 md:mx-12 gap-6 mb-96 lg:mb-0">
+        <div className="flex flex-col w-full lg:w-1/2 mx-4 md:mx-12 gap-6 mb-56 lg:mb-0">
           {orderItems.map((item) => {
             return <OrderListComponent key={item.id} {...item} />;
           })}
         </div>
         {/*summary  */}
         <div
-          className=" lg:w-2/5 relative lg:right-0 bottom-0 lg:mr-12  w-full
+          className=" lg:w-2/5 lg:relative lg:right-0 fixed bottom-0 lg:mr-12  w-full
         "
         >
           <Summary />
