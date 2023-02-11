@@ -10,7 +10,7 @@ const OrderDetailsPage = () => {
 
   // console.log(quantity);
   return (
-    <section className="lg:mb-10 mt-10">
+    <section className="lg:mb-10 mt-10 h-auto">
       <div className="mx-6 md:mx-10 my-4">
         <img
           className="w-8  mb-8 hover:scale-125 duration-100"
@@ -32,8 +32,8 @@ const OrderDetailsPage = () => {
         </div>
         {/*summary  */}
         <div
-          className=" lg:w-2/5 fixed lg:right-0 lg:mr-12 
-        lg:top-120 w-full bottom-0 "
+          className=" lg:w-2/5 relative lg:right-0 bottom-0 lg:mr-12  w-full
+        "
         >
           <Summary />
         </div>

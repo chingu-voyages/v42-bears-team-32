@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -7,8 +7,17 @@ import Home from './Pages/Home';
 import SingleProductPage from './Pages/SingleProductCard/SingleProductPage';
 import SharedPages from './constants/SharedPages';
 import OrderDetailsPage from './Pages/OrderDetailsPage/OrderDetailsPage';
+import { noOfCartItems } from './features/Orders/orderSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
+  const { orderItems } = useSelector((store) => store.order);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(noOfCartItems());
+  }, [orderItems]);
+
   return (
     <BrowserRouter>
       <Routes>
