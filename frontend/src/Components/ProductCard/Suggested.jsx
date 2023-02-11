@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchFoods } from "../../features/Food/foodSlice";
 
 import HomeProductCard from "./HomeProductCard";
-function HomeProducts({ label }) {
+function Suggested({ label }) {
   const food = useSelector((state) => state.food.foods.results);
   const dispatch = useDispatch();
   console.log("show food", food);
@@ -19,7 +19,7 @@ function HomeProducts({ label }) {
 
       <div className="flex justify-between space-x-[10px] overflow-x-scroll">
         {food &&
-          food.map((data) => (
+          food.slice(2, 6).map((data) => (
             <HomeProductCard
               key={data._id}
               foodName={data.name}
@@ -34,4 +34,4 @@ function HomeProducts({ label }) {
   );
 }
 
-export default HomeProducts;
+export default Suggested;
