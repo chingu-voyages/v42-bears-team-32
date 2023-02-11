@@ -2,7 +2,7 @@ import React from 'react';
 import { images } from '../../constants';
 const Footer = () => {
   return (
-    <footer className=" bottom-0 lg:px-20 px-10 py-10 bg-[#F5F5F5] w-full">
+    <footer className=" bottom-0 h-62 lg:px-20 px-10 py-10 bg-[#F5F5F5] w-full">
       <img
         src={images.logo}
         alt="EatingLight"

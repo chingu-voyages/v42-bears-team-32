@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import cartItems from '../../Pages/OrderDetailsPage/cartItems';
 const initialState = {
   orderItems: cartItems,
-  total: 0,
+  totalPrice: 0,
   quantity: 4,
   isLoading: true,
 };
@@ -23,8 +23,20 @@ const orderSlice = createSlice({
       const orderItem = state.orderItems.find((item) => item.id === payload.id);
       orderItem.quantity = orderItem.quantity - 1;
     },
+    noOfCartItems: (state) => {
+      let quantity = 0;
+      let totalPrice = 0;
+      state.orderItems.forEach((item) => {
+        quantity += item.quantity;
+        totalPrice += item.quantity * item.price;
+      });
+      state.quantity = quantity;
+      state.totalPrice = totalPrice;
+      console.log(totalPrice);
+    },
   },
 });
-export const { increment, removeItem, decrement } = orderSlice.actions;
+export const { increment, removeItem, decrement, noOfCartItems } =
+  orderSlice.actions;
 
 export default orderSlice.reducer;
