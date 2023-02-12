@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchFoods } from "../../features/Food/foodSlice";
 
 import HomeProductCard from "./HomeProductCard";
-function HomeProducts({ label }) {
+function BestCuisine({ label }) {
   const food = useSelector((state) => state.food.foods.results);
   const dispatch = useDispatch();
-
+  console.log("show best cuisine", food);
   useEffect(() => {
     dispatch(fetchFoods());
   }, []);
@@ -19,8 +19,9 @@ function HomeProducts({ label }) {
 
       <div className="flex justify-between space-x-[10px] overflow-x-scroll">
         {food &&
-          food.map((data) => (
+          food.slice(4, 8).map((data) => (
             <HomeProductCard
+              id={data._id}
               key={data._id}
               foodName={data.name}
               restaurantName={data.restaurantName}
@@ -34,4 +35,4 @@ function HomeProducts({ label }) {
   );
 }
 
-export default HomeProducts;
+export default BestCuisine;
