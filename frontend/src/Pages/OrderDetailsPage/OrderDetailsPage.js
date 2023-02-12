@@ -18,7 +18,7 @@ const OrderDetailsPage = () => {
         </div>
       </div>
       {/* Order list */}
-      <div className="flex flex-col w-1/2 mx-12 gap-6 ">
+      <div className="flex flex-col w-1/2 mx-12 gap-6">
         {cartItems.map((item) => {
           return <OrderListComponent key={item.id} {...item} />;
         })}

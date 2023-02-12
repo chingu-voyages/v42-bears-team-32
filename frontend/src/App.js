@@ -7,6 +7,8 @@ import Home from './Pages/Home';
 import SingleProductPage from './Pages/SingleProductCard/SingleProductPage';
 import SharedPages from './constants/SharedPages';
 import OrderDetailsPage from './Pages/OrderDetailsPage/OrderDetailsPage';
+import Login from './Pages/Authentication/Login';
+import Register from './Pages/Authentication/Register';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/singleproduct" element={<SingleProductPage />} />
           <Route path="/orderdetails" element={<OrderDetailsPage />} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
