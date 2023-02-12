@@ -11,7 +11,7 @@ const Register = () => {
     name: ''
   })
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
   
 
