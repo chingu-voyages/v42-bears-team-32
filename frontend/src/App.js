@@ -2,6 +2,9 @@ import React, { lazy, Suspense, useEffect } from "react";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+
+import Login from './Pages/Authentication/Login';
+import Register from './Pages/Authentication/Register';
 import Error from "./Components/Error";
 import Home from "./Pages/Home";
 import SingleProductPage from "./Pages/SingleProductCard/SingleProductPage";
@@ -9,6 +12,7 @@ import SharedPages from "./constants/SharedPages";
 import OrderDetailsPage from "./Pages/OrderDetailsPage/OrderDetailsPage";
 import { noOfCartItems } from "./features/Orders/orderSlice";
 import { useDispatch, useSelector } from "react-redux";
+
 
 function App() {
   const { orderItems } = useSelector((store) => store.order);
@@ -25,6 +29,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/food/:id" element={<SingleProductPage />} />
           <Route path="/orderdetails" element={<OrderDetailsPage />} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

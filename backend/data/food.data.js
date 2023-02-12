@@ -2,9 +2,11 @@ import mongoose from "mongoose"
 export default [
     {
       name: "Pizza Margherita",
-      imageUrl: "https://www.example.com/pizza_margherita.jpg",
+      imageUrl: "https://picsum.photos/500/300?random=1",
       ingredients: ["Tomato Sauce", "Mozzarella Cheese", "Basil"],
       price: mongoose.Types.Decimal128.fromString("15.99"),
+      calorie: 10,
+
       carbs: 30,
       fat: 10,
       protein: 10,
@@ -17,8 +19,9 @@ export default [
     },
     {
       name: "Spicy Chicken Wings",
-      imageUrl: "https://www.example.com/spicy_chicken_wings.jpg",
+      imageUrl: "https://picsum.photos/500/300?random=2",
       ingredients: ["Chicken Wings", "Hot Sauce", "Garlic"],
+      calorie: 10,
       price: mongoose.Types.Decimal128.fromString("9.99"),
       carbs: 15,
       fat: 25,
@@ -32,8 +35,9 @@ export default [
     },
     {
       name: "Sushi Platter",
-      imageUrl: "https://www.example.com/sushi_platter.jpg",
+      imageUrl: "https://picsum.photos/500/300?random=3",
       ingredients: ["Rice", "Seaweed", "Raw Fish"],
+      calorie: 10,
       price: mongoose.Types.Decimal128.fromString("25.99"),
       carbs: 25,
       fat: 5,
@@ -47,8 +51,9 @@ export default [
     },
     {
       name: "Veggie Burger",
-      imageUrl: "https://www.example.com/veggie_burger.jpg",
+      imageUrl: "https://picsum.photos/500/300?random=3",
       ingredients: ["Bun", "Vegetables", "Cheese"],
+      calorie: 10,
       price: mongoose.Types.Decimal128.fromString("12.99"),
       carbs: 30,
       fat: 15,
@@ -62,8 +67,9 @@ export default [
     },
     {
       name: "Tandoori Chicken",
-      imageUrl: "https://www.example.com/tandoori_chicken.jpg",
+      imageUrl: "https://picsum.photos/500/300?random=4",
       ingredients: ["Chicken", "Spices", "Yogurt"],
+      calorie: 10,
       price: mongoose.Types.Decimal128.fromString("14.99"),
       carbs: 10,
       fat: 20,
@@ -77,8 +83,9 @@ export default [
     },
     {
         name: "Spaghetti Carbonara",
-        imageUrl: "https://www.example.com/spaghetti-carbonara.jpg",
+        imageUrl: "https://picsum.photos/500/300?random=5",
         ingredients: ["Spaghetti", "Bacon", "Eggs", "Parmesan Cheese"],
+        calorie: 10,
         price: mongoose.Types.Decimal128.fromString("14.99"),
         carbs: 30,
         fat: 30,
@@ -91,8 +98,9 @@ export default [
       },
       {
         name: "Pho",
-        imageUrl: "https://www.example.com/pho.jpg",
+        imageUrl: "https://picsum.photos/500/300?random=6",
         ingredients: ["Rice Noodles", "Beef", "Herbs", "Broth"],
+        calorie: 10,
         price: mongoose.Types.Decimal128.fromString("8.99"),
         carbs: 40,
         fat: 10,
@@ -105,8 +113,9 @@ export default [
       },
       {
         name: "Bibimbap",
-        imageUrl: "https://www.example.com/bibimbap.jpg",
+        imageUrl: "https://picsum.photos/500/300?random=7",
         ingredients: ["Rice", "Vegetables", "Beef", "Egg"],
+        calorie: 10,
         price: mongoose.Types.Decimal128.fromString("11.99"),
         carbs: 30,
         fat: 20,
