@@ -1,11 +1,11 @@
-
 import { configureStore, getDefaultMiddleware , combineReducers } from "@reduxjs/toolkit";
-import authReducer from './store/authSlice'
-import foodReducer from './store/foodSlice'
-import { configureStore } from "@reduxjs/toolkit";
+
+import authReducer from './features/Auth/authSlice'
 import orderReducer from "./features/Orders/orderSlice";
 import foodReducer from "./features/Food/foodSlice";
 import singleFoodReducer from "./features/Food/singleFoodSlice";
+
+
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 

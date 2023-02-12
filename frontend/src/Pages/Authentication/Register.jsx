@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useDispatch} from 'react-redux'
-import { registerUser } from '../../store/authSlice'
+import { registerUser } from '../../features/Auth/authSlice'
 
 
 

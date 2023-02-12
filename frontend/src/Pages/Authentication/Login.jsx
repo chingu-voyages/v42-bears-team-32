@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { loginUser } from '../../store/authSlice'
+import { loginUser } from '../../features/Auth/authSlice'
 
 import {  useDispatch } from 'react-redux'
 import './Auth.styles.css'
