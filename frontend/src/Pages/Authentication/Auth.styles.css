@@ -1,4 +1,4 @@
-/* .header > h2 {
+.header > h2 {
     margin: 0;
     color: #4f46a5;
   }
@@ -48,4 +48,4 @@
     letter-spacing: 1px;
     font-family: "Rubik", sans-serif;
     cursor: pointer;
-  } */
+  }
