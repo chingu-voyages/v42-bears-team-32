@@ -10,14 +10,14 @@ const initialState = {
 // Generates pending, fulfilled and rejected action types
 export const fetchFoods = createAsyncThunk("food/fetchFoods", () => {
   return axios
-    .get("http://localhost:8000/api/v1/foods")
+    .get("https://food-app-api-gypb.onrender.com/api/v1/foods")
     .then((response) => response.data);
 });
 export const fetchSingleFood = createAsyncThunk(
   "food/fetchSingleFood",
   (id) => {
     return axios
-      .get(`http://localhost:8000/api/v1/foods/${id}`)
+      .get(`https://food-app-api-gypb.onrender.com/api/v1/foods/${id}`)
       .then((response) => response.data);
   }
 );

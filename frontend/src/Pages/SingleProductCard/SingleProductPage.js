@@ -14,7 +14,7 @@ const SingleProductPage = () => {
   const id = useParams().id;
   const fetchDetails = async () => {
     const res = await axios
-      .get(`http://localhost:8000/api/v1/foods/${id}`)
+      .get(`https://food-app-api-gypb.onrender.com/api/v1/foods/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
