@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 function HomeProductCard({
+  id,
   foodName,
   restaurantName,
   src,
@@ -8,7 +9,7 @@ function HomeProductCard({
   calories,
 }) {
   return (
-    <Link to="/singleproduct">
+    <Link to={`/food/${id}`}>
       <div className="rounded-[20px] shadow-md bg-white w-[250px] h-[210px]">
         <img
           className="rounded-t-[20px] w-[250px] h-[125px]"

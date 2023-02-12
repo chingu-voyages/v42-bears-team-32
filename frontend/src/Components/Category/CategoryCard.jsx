@@ -4,7 +4,7 @@ function CategoryCard({ id, name, src, bg }) {
     <div
       className={`${bg} shadow-lg lg:w-[250px] lg:h-[120px] w-[80px] h-[120px]`}
     >
-      <div className="flex flex-col lg:flex-row  items-center p-6 rounded-[20px]">
+      <div className="flex flex-col lg:flex-row lg:justify-around  items-center p-6 rounded-[20px]">
         <img
           src={src}
           alt=""
