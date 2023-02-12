@@ -21,6 +21,7 @@ function Suggested({ label }) {
         {food &&
           food.slice(2, 6).map((data) => (
             <HomeProductCard
+              id={data._id}
               key={data._id}
               foodName={data.name}
               restaurantName={data.restaurantName}

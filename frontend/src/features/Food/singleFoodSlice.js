@@ -7,37 +7,19 @@ const initialState = {
   error: "",
 };
 
-// Generates pending, fulfilled and rejected action types
-export const fetchFoods = createAsyncThunk("food/fetchFoods", () => {
-  return axios
-    .get("https://food-app-api-gypb.onrender.com/api/v1/foods")
-    .then((response) => response.data);
-});
 export const fetchSingleFood = createAsyncThunk(
   "food/fetchSingleFood",
   (id) => {
     return axios
-      .get(`https://food-app-api-gypb.onrender.com/api/v1/foods/${id}`)
+      .get(`http://localhost:8000/api/v1/foods/${id}`)
       .then((response) => response.data);
   }
 );
-const foodSlice = createSlice({
+
+const singleFoodSlice = createSlice({
   name: "food",
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(fetchFoods.pending, (state) => {
-      state.loading = true;
-    });
-    builder.addCase(fetchFoods.fulfilled, (state, action) => {
-      state.loading = false;
-      state.foods = action.payload;
-      state.error = "";
-    });
-    builder.addCase(fetchFoods.rejected, (state, action) => {
-      state.loading = false;
-      state.foods = [];
-      state.error = action.error.message;
-    });
     builder.addCase(fetchSingleFood.pending, (state) => {
       state.loading = true;
     });
@@ -54,4 +36,4 @@ const foodSlice = createSlice({
   },
 });
 
-export default foodSlice.reducer;
+export default singleFoodSlice.reducer;

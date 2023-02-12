@@ -6,7 +6,7 @@ import HomeProductCard from "./HomeProductCard";
 function TodayOffer({ label }) {
   const food = useSelector((state) => state.food.foods.results);
   const dispatch = useDispatch();
-  console.log("show food", food);
+  console.log("food for today offer", food);
   useEffect(() => {
     dispatch(fetchFoods());
   }, []);
@@ -21,6 +21,7 @@ function TodayOffer({ label }) {
         {food &&
           food.slice(0, 4).map((data) => (
             <HomeProductCard
+              id={data._id}
               key={data._id}
               foodName={data.name}
               restaurantName={data.restaurantName}
