@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const Tag = () => {
-  const tagName = [];
-
+const Tag = ({ tag }) => {
   return (
-    <div>
+    <div className="mt-8">
       <a
         href="#"
-        className="px-4 py-[.4px] bg-primary-0 rounded-xl  border-primary-5 border-solid border-2"
+        className="px-6 pb-[1.5px] bg-primary-0 rounded-xl  border-primary-5 border-solid border-2"
       >
-        Vegan
+        {tag}
       </a>
     </div>
   );

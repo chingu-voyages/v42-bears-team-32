@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchFoods } from "../../features/Food/foodSlice";
 
 import HomeProductCard from "./HomeProductCard";
-function HomeProducts({ data, label }) {
-  return (
-    <div className="px-[150px] py-[35px]">
-      <p className="text-dark-2 text-h1 font-weight-700 py-[25px]">{label}</p>
+function HomeProducts({ label }) {
+  const food = useSelector((state) => state.food.foods.results);
+  const dispatch = useDispatch();
 
-      <div className="flex justify-between">
-        {data &&
-          data.map((data) => (
+  useEffect(() => {
+    dispatch(fetchFoods());
+  }, []);
+
+  return (
+    <div className="lg:px-[150px] px-[25px] py-[25px] ">
+      <p className="text-dark-2 lg:text-h1 text-h2 font-weight-700 py-[25px]">
+        {label}
+      </p>
+
+      <div className="flex justify-between space-x-[10px] overflow-x-scroll">
+        {food &&
+          food.map((data) => (
             <HomeProductCard
-              key={data.id}
-              foodName={data.foodName}
+              key={data._id}
+              foodName={data.name}
               restaurantName={data.restaurantName}
-              src={data.src}
-              waitingTime={data.waitingTime}
-              calories={data.calories}
+              src={data.imageUrl}
+              waitingTime={data.deliveryTime}
+              //calories={data.calories}
             />
           ))}
       </div>

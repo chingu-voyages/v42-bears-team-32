@@ -34,12 +34,12 @@ const categoryData = [
 ];
 function ExploreCategory() {
   return (
-    <div className="px-[150px] pt-[50px]">
-      <p className="text-dark-2 text-h1 font-weight-700 py-[25px]">
+    <div className="lg:px-[150px] px-[25px] pt-[50px]">
+      <p className="sm:px-[25px] text-dark-2 lg:text-h1 sm:text-h4 font-weight-700 py-[25px]">
         Explore by Categories
       </p>
 
-      <div className="flex justify-between">
+      <div className="flex justify-between space-x-2">
         {categoryData &&
           categoryData.map((data) => (
             <CategoryCard

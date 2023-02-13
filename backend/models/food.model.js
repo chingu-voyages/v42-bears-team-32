@@ -141,6 +141,10 @@ const foodSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  calorie: {
+    type: Number,
+    required: true
+  },
   protein: {
     type: Number,
     required: true
