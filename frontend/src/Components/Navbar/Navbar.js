@@ -2,10 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-// import SearchBar from '../search/SearchBar';
+import SearchBar from '../search/SearchBar';
 import { images } from '../../constants';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  const { quantity } = useSelector((store) => store.order);
+
   const [show, setShow] = useState(false);
   const navRef = useRef(null);
 
@@ -29,7 +32,9 @@ const Navbar = () => {
           className="w-28 lg:w-40 py-3 lg:py-2 mr-20"
         />
       </Link>
-      <div className="text-center">{/* <SearchBar /> */}</div>
+      <div className="text-center">
+        <SearchBar />
+      </div>
 
       <button
         className="ml-auto absolute right-6 text-3xl text-lime-500 top-7 z-20 lg:hidden"
@@ -54,8 +59,14 @@ const Navbar = () => {
           >
             Sign In
           </Link>
-          <Link to="/orderdetails" className="px-6 py-2 bg-transparent ">
+          <Link
+            to="/orderdetails"
+            className="px-6 py-2 bg-transparent relative"
+          >
             <img src={images.cart} alt="cart" className="hover:scale-110" />
+            <span className="bg-red-600 absolute top-0 right-8 lg:right-2  px-2 rounded-xl hover:scale-110">
+              {quantity}
+            </span>
           </Link>
         </ul>
       </div>
