@@ -10,11 +10,11 @@ function HomeProductCard({
 }) {
   return (
     <Link to={`/food/${id}`} className="my-10">
-      <div className="rounded-[20px] shadow-md bg-white w-[250px] h-[210px]">
+      <div className="rounded-[20px] shadow-md bg-white w-[250px] h-[210px] overflow-hidden">
         <img
-          className="rounded-t-[20px] w-[250px] h-[125px]"
+          className="rounded-t-[20px] w-[250px] h-[125px] hover:scale-110 hover:duration-300"
           src={src}
-          alt=""
+          alt={foodName}
         />
 
         <div className="flex justify-between px-4 py-2">
