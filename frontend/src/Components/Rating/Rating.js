@@ -11,14 +11,6 @@ const Rating = () => {
     setChecked(value);
   };
 
-  const handleMouseOver = (value) => {
-    // console.log(value);
-    setHover(value);
-  };
-  const handleMouseLeave = () => {
-    setHover(undefined);
-  };
-
   return (
     <div className="flex my-6">
       {stars.map((star, index) => {
@@ -31,8 +23,6 @@ const Rating = () => {
                   : 'text-[#DEE2E6]'
               }
               onClick={() => handleClick(index + 1)}
-              onMouseOver={() => handleMouseOver(index + 1)}
-              onMouseLeave={handleMouseLeave}
             />
           </div>
         );

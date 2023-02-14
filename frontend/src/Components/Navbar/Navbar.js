@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import SearchBar from '../search/SearchBar';
 import { images } from '../../constants';
+
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
@@ -64,6 +65,12 @@ const Navbar = () => {
             className="px-6 py-2 bg-transparent relative"
           >
             <img src={images.cart} alt="cart" className="hover:scale-110" />
+            <img
+              src={images.cartWheel}
+              alt="o"
+              className="absolute right-12 lg:right-6"
+            />
+            <img src={images.cartWheel} alt="o" className="absolute left-8" />
             <span className="bg-red-600 absolute top-0 right-8 lg:right-2  px-2 rounded-xl hover:scale-110">
               {quantity}
             </span>
