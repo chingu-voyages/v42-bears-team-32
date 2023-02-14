@@ -4,7 +4,7 @@ export default function SearchBar() {
       <input
         type="search"
         placeholder="Search"
-        className="w-full h-4 text-center bg-transparent m-0 focus:outline-none placeholder:text-gray-6 text-black block"
+        className="w-full h-4 text-center bg-transparent m-0 focus:outline-none placeholder:text-gray-6 text-black hidden lg:block"
       />
     </div>
   );
