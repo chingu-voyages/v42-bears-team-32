@@ -19,17 +19,19 @@ function BestCuisine({ label }) {
 
       <div className="flex justify-between space-x-[10px] overflow-x-scroll hideScroll">
         {food &&
-          food.slice(4, 8).map((data) => (
-            <HomeProductCard
-              id={data._id}
-              key={data._id}
-              foodName={data.name}
-              restaurantName={data.restaurantName}
-              src={data.imageUrl}
-              waitingTime={data.deliveryTime}
-              //calories={data.calories}
-            />
-          ))}
+          food
+            .slice(4, 8)
+            .map((data) => (
+              <HomeProductCard
+                id={data._id}
+                key={data._id}
+                foodName={data.name}
+                restaurantName={data.restaurantName}
+                src={data.imageUrl}
+                waitingTime={data.deliveryTime}
+                calories={data.calorie}
+              />
+            ))}
       </div>
     </div>
   );

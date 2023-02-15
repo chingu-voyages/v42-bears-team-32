@@ -6,7 +6,7 @@ import HomeProductCard from './HomeProductCard';
 function Suggested({ label }) {
   const food = useSelector((state) => state.food.foods.results);
   const dispatch = useDispatch();
-  console.log('show food', food);
+  console.log('show food 1', food);
   useEffect(() => {
     dispatch(fetchFoods());
   }, []);
@@ -19,17 +19,19 @@ function Suggested({ label }) {
 
       <div className="flex justify-between space-x-[10px] overflow-x-scroll hideScroll ">
         {food &&
-          food.slice(2, 6).map((data) => (
-            <HomeProductCard
-              id={data._id}
-              key={data._id}
-              foodName={data.name}
-              restaurantName={data.restaurantName}
-              src={data.imageUrl}
-              waitingTime={data.deliveryTime}
-              //calories={data.calories}
-            />
-          ))}
+          food
+            .slice(2, 6)
+            .map((data) => (
+              <HomeProductCard
+                id={data._id}
+                key={data._id}
+                foodName={data.name}
+                restaurantName={data.restaurantName}
+                src={data.imageUrl}
+                waitingTime={data.deliveryTime}
+                calories={data.calorie}
+              />
+            ))}
       </div>
     </div>
   );

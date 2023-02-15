@@ -19,17 +19,19 @@ function TodayOffer({ label }) {
 
       <div className="flex justify-between space-x-[10px] overflow-x-scroll hideScroll">
         {food &&
-          food.slice(0, 4).map((data) => (
-            <HomeProductCard
-              id={data._id}
-              key={data._id}
-              foodName={data.name}
-              restaurantName={data.restaurantName}
-              src={data.imageUrl}
-              waitingTime={data.deliveryTime}
-              //calories={data.calories}
-            />
-          ))}
+          food
+            .slice(0, 4)
+            .map((data) => (
+              <HomeProductCard
+                id={data._id}
+                key={data._id}
+                foodName={data.name}
+                restaurantName={data.restaurantName}
+                src={data.imageUrl}
+                waitingTime={data.deliveryTime}
+                calories={data.calorie}
+              />
+            ))}
       </div>
     </div>
   );
