@@ -1,14 +1,14 @@
-import HeroImg from "../../asset/Home/HeroImage.png";
-import logo from "../../asset/logo.svg";
+import HeroImg from '../../asset/Home/HeroImage.png';
+import logo from '../../asset/logo.svg';
 
-import { MdSearch } from "react-icons/md";
+import { MdSearch } from 'react-icons/md';
 
 export default function HeroSection() {
   return (
     <div className="bg-primary-0 overflow-x-clip">
-      <div className="relative px-6 py-10 sm:p-0 sm:h-[26rem] sm:flex sm:items-stretch sm:justify-start sm:max-w-max sm:m-auto">
-        <div className="sm:p-8 sm:min-w-[28rem] flex flex-col justify-center items-center sm:items-start">
-          <div className="mb-5">
+      <div className="relative px-6 py-10 sm:p-0 sm:h-[26rem] sm:flex sm:items-stretch sm:justify-start sm:max-w-max sm:m-auto lg:gap-20">
+        <div className="px-2 md:pr-8 sm:min-w-[28rem] flex flex-col justify-center items-center sm:items-start gap-4">
+          <div className="mb-5 w-80">
             <img src={logo} alt="EatingLight" className="max-w-lg w-full" />
           </div>
           <div className="mb-5">

@@ -6,7 +6,14 @@ body {
   margin: 0;
   scroll-behavior: smooth;
 }
-
 .navbar-animate {
   transition: width 2s, height 2s;
+}
+
+.hideScroll::-webkit-scrollbar {
+  display: none;
+}
+.hideScroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
