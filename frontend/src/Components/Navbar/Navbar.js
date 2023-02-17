@@ -19,9 +19,7 @@ const Navbar = () => {
           className="w-28 lg:w-40 py-3 lg:py-2 mr-20"
         />
       </Link>
-      <div className="text-center hidden lg:block">
-        <SearchBar />
-      </div>
+      <div className="text-center hidden lg:block">{/* <SearchBar /> */}</div>
 
       <ul
         className="  lg:bg-transparent  lg:h-auto  
