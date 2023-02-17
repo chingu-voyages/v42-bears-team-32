@@ -10,7 +10,7 @@ const initialState = {
 // Generates pending, fulfilled and rejected action types
 export const fetchFoods = createAsyncThunk("food/fetchFoods", () => {
   return axios
-    .get("http://localhost:8000/api/v1/foods")
+    .get("https://food-app-api-gypb.onrender.com/api/v1/foods")
     .then((response) => response.data);
 });
 
