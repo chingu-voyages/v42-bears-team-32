@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { images } from "../../constants";
-import Rating from "../../Components/Rating/Rating";
-import Tag from "../../Components/Tag/Tag";
-import AddToCart from "../../Components/AddToCart/AddToCart";
-import Counter from "../../Components/QuantityPicker";
-import CaloriePercent from "../../Components/CaloriePercent";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { images } from '../../constants';
+import Rating from '../../Components/Rating/Rating';
+import Tag from '../../Components/Tag/Tag';
+import AddToCart from '../../Components/AddToCart/AddToCart';
+import Counter from '../../Components/QuantityPicker';
+import CaloriePercent from '../../Components/CaloriePercent';
 
 const SingleProductPage = () => {
   const [food, setFood] = useState();
@@ -29,7 +29,7 @@ const SingleProductPage = () => {
   console.log(id, food);
 
   return (
-    <section className="h-auto lg:h-screen flex flex-col m-6">
+    <section className="h-auto lg:h-auto flex flex-col m-6 ">
       <img
         className="w-8 mx-10 my-4 hover:scale-125 duration-100"
         src={images.backarrow}
@@ -37,11 +37,17 @@ const SingleProductPage = () => {
       />
       {food && (
         <div className="flex flex-col lg:flex-row lg:m-10">
-          <img src={images.food} alt="food" className="mb-8" />
-          <div className="flex flex-col lg:w-screen lg:px-16 gap-4 ">
+          <div className="lg:w-[60%] w-full">
+            <img
+              src={food.imageUrl}
+              alt="food"
+              className="mb-8 w-full rounded-xl"
+            />
+          </div>
+          <div className="flex flex-col  lg:px-16 gap-4 ">
             <div className="flex justify-between font-bold">
               <h3 className="text-4xl text-[#373A40]">{food.name}</h3>
-              <p className="text-2xl text-[#8ABE53]">{food.calories} Cal</p>
+              <p className="text-2xl text-[#8ABE53]">{food.calorie} Cal</p>
             </div>
             <div className="flex gap-1">
               <p className="text-[#5C5F66]">{food?.restaurantName}</p>
@@ -49,19 +55,21 @@ const SingleProductPage = () => {
               <p className="text-[#909296]">{food?.deliveryTime} min</p>
             </div>
             {food.ingredients.map((data) => (
-              <p className="text-[#909296]">{data}</p>
+              <div className="flex">
+                <p className="text-[#909296]">{data}</p>
+              </div>
             ))}
 
             <span className="hidden lg:block">
               <Rating />
-              <Tag />
+              {food.tags && food.tags.map((data) => <Tag tag={data} />)}
             </span>
             <div className="flex justify-between w-full flex-col gap-10">
               <p className="text-primary-5 font-bold text-[24px]">
                 ${food.price.$numberDecimal}
               </p>
               <div className="flex justify-between items-center">
-                <Counter />
+                <Counter id={id} />
                 <AddToCart />
               </div>
             </div>
