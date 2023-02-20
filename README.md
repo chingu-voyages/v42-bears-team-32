@@ -8,6 +8,7 @@ This app is created by Chingu Voyage 42 bears-team-32. It shows the healthy food
 
 ### Live Link:
 (https://healthy-food-delviery.onrender.com/)
+(https://eating-light.netlify.app/)
 
 ## Features
 This project includes:
