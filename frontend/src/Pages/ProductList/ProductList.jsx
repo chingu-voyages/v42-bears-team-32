@@ -2,36 +2,34 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFoods } from "../../features/Food/foodSlice";
 
-import HomeProductCard from "./HomeProductCard";
-function HomeProducts({ label }) {
+import ProductListCard from "../../Components/ProductList/ProductListCard";
+function ProductList({ label }) {
   const food = useSelector((state) => state.food.foods.results);
   const dispatch = useDispatch();
-
+  console.log("show best cuisine", food);
   useEffect(() => {
     dispatch(fetchFoods());
   }, []);
 
   return (
-    <div className="lg:px-[150px] px-[25px] py-[15px] ">
-      <div className="flex justify-between items-center">
-        <p className="text-dark-2 lg:text-h1 text-h2 font-semibold py-[25px]">
-          {label}
-        </p>
-        <Link to="/foods">
-          <p className="text-primary-7 lg:text-h5 text-h5 py-[25px]">See All</p>
-        </Link>
-      </div>
+    <div className="lg:px-[50px] px-[25px] py-[25px] ">
+      <p className="text-dark-2 lg:text-h1 text-h2 font-semibold py-[25px]">
+        {label}
+      </p>
 
-      <div className="flex justify-between space-x-[10px] overflow-x-scroll">
+      <div className="flex justify-between flex-wrap space-x-[10px]">
         {food &&
           food.map((data) => (
-            <HomeProductCard
+            <ProductListCard
+              id={data._id}
               key={data._id}
               foodName={data.name}
               restaurantName={data.restaurantName}
               src={data.imageUrl}
               waitingTime={data.deliveryTime}
-              //calories={data.calories}
+              calories={data.calorie}
+              tags={data.tags}
+              price={data.price.$numberDecimal}
             />
           ))}
       </div>
@@ -39,4 +37,4 @@ function HomeProducts({ label }) {
   );
 }
 
-export default HomeProducts;
+export default ProductList;

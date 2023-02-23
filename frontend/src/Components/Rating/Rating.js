@@ -1,5 +1,5 @@
-import { React, useState } from 'react';
-import { FaStar } from 'react-icons/fa';
+import { React, useState } from "react";
+import { FaStar } from "react-icons/fa";
 
 const Rating = () => {
   const stars = [1, 2, 3, 4, 5];
@@ -12,15 +12,15 @@ const Rating = () => {
   };
 
   return (
-    <div className="flex my-6">
+    <div className="flex">
       {stars.map((star, index) => {
         return (
           <div className="text-3xl key={index}">
             <FaStar
               className={
                 (hover || checked) > index
-                  ? 'text-[#FFE081] hover:text-[#FFE081] '
-                  : 'text-[#DEE2E6]'
+                  ? "text-[#FFE081] hover:text-[#FFE081] "
+                  : "text-[#DEE2E6]"
               }
               onClick={() => handleClick(index + 1)}
             />
